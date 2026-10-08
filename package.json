@@ -18,7 +18,7 @@
     "clsx": "^2.1.1",
     "lucide-react": "^0.553.0",
     "motion": "^12.23.24",
-    "next": "^15.5.25",
+    "next": "^15.5.27",
     "postcss": "^8.5.27",
     "react": "^19.2.1",
     "react-dom": "^19.2.1",
@@ -39,6 +39,9 @@
     "typescript": "5.9.3"
   },
   "overrides": {
-    "@modelcontextprotocol/sdk": "1.32.1"
+    "@modelcontextprotocol/sdk": "1.32.1",
+    "next": {
+      "postcss": "8.5.27"
+    }
   }
 }
