@@ -39,6 +39,9 @@
     "typescript": "5.9.3"
   },
   "overrides": {
-    "@modelcontextprotocol/sdk": "1.32.1"
+    "@modelcontextprotocol/sdk": "1.32.1",
+    "next": {
+      "postcss": "8.5.27"
+    }
   }
 }
