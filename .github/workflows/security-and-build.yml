@@ -22,6 +22,12 @@ jobs:
           cache: npm
       - name: Install locked dependencies
         run: npm ci
+      - name: Verify Firebase CLI remains functional after uuid upgrades
+        env:
+          CI: 'true'
+        run: |
+          ./node_modules/.bin/firebase --version
+          ./node_modules/.bin/firebase --help > /dev/null
       - name: Verify MCP SDK is patched
         run: node -e "const l=require('./package-lock.json'); const v=l.packages['node_modules/@modelcontextprotocol/sdk']?.version; if(v!=='1.32.1'){ console.error('MCP SDK not patched:',v); process.exit(1) }"
       - name: Run ESLint
