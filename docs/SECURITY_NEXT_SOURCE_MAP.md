@@ -8,7 +8,7 @@ Updated lockfile metadata (including integrity) comes from GitHub Dependabot's e
 
 ### Still requires follow-up / verification
 
-- Bundled Next.js dependency `node_modules/next/node_modules/postcss@8.4.31` is still flagged by advisories #1, #5, #6, #9. The Next.js upstream package pins that version. Do NOT override blindly without build coverage and evaluating upstream fixes.
+- Scoped npm override forces Next.js's bundled PostCSS from vulnerable 8.4.31 to patched **8.5.27** (alerts #1, #5, #6, #9). This changes Next's upstream dependency resolution: **do not merge unless `npm ci`, lint, and build pass**, and confirm no runtime regression.
 - `braces@3.0.3` still has no upstream patched version; avoid accepting user-controlled glob patterns in affected tools.
 - Old `uuid@9.0.1` and `universal-analytics/uuid@8.3.2` remain transitive. Major upgrades require parent compatibility checks.
 - Any other outstanding GHSA findings should be validated against the GitHub Dependabot alert page; no alerts have been dismissed manually.
